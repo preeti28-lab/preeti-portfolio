@@ -32,8 +32,11 @@ export const projects = [
     tech: ['React', 'Redux Toolkit', 'Redux-Persist', 'React Router', 'Tailwind CSS'],
     image:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=70',
-    live: 'https://crm-panel-8a9y.vercel.app/login',
-    github: '#', // TODO: add repository URL
+    // Root URL, not /login — the CRM deployment has no SPA rewrite, so a direct
+    // hit on a client-side route returns Vercel's 404. React Router redirects
+    // to the login screen on its own once index.html loads.
+    live: 'https://crm-panel-8a9y.vercel.app/',
+    github: 'https://github.com/preeti28-lab', // TODO: point at the individual repo
   },
   {
     slug: 'tech-shashtra-solutions',
@@ -53,8 +56,8 @@ export const projects = [
     tech: ['React', 'Tailwind CSS', 'Framer Motion', 'React Router', 'IntersectionObserver'],
     image:
       'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=70',
-    live: '#', // TODO: add live demo URL
-    github: '#', // TODO: add repository URL
+    live: 'https://tech-shastra.vercel.app/',
+    github: 'https://github.com/preeti28-lab', // TODO: point at the individual repo
   },
   {
     slug: 'deepak-printer',
@@ -75,7 +78,7 @@ export const projects = [
     image:
       'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=70',
     live: '#', // TODO: add live demo URL
-    github: '#', // TODO: add repository URL
+    github: 'https://github.com/preeti28-lab', // TODO: point at the individual repo
   },
   {
     slug: 'personal-portfolio',
@@ -95,8 +98,8 @@ export const projects = [
     tech: ['React', 'Tailwind CSS', 'GitHub Pages'],
     image:
       'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=1200&q=70',
-    live: '#', // TODO: add live demo URL
-    github: '#', // TODO: add repository URL
+    live: 'https://preeti-portfolio-wheat.vercel.app/',
+    github: 'https://github.com/preeti28-lab', // TODO: point at the individual repo
   },
 ]
 
