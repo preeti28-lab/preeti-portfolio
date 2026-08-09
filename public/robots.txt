@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Update the host below to your deployed domain.
+Sitemap: https://preeti28-lab.github.io/sitemap.xml

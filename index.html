@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3366ff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)" />
+
+    <!-- ---------------------------------------------------------------- -->
+    <!-- Primary SEO tags                                                  -->
+    <!-- ---------------------------------------------------------------- -->
+    <title>Preeti Kumari — Frontend Developer</title>
+    <meta
+      name="description"
+      content="Preeti Kumari is a Frontend Developer building responsive, accessible web interfaces with React.js, JavaScript (ES6+) and Tailwind CSS. View projects, experience and get in touch."
+    />
+    <meta
+      name="keywords"
+      content="Frontend Developer, React Developer, React.js, Tailwind CSS, JavaScript, Redux Toolkit, UI Developer, Portfolio, Delhi"
+    />
+    <meta name="author" content="Preeti Kumari" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://preeti28-lab.github.io/" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Preeti Kumari — Portfolio" />
+    <meta property="og:title" content="Preeti Kumari — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Frontend Developer building responsive, accessible web interfaces with React.js and Tailwind CSS."
+    />
+    <meta property="og:url" content="https://preeti28-lab.github.io/" />
+    <meta property="og:image" content="/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Preeti Kumari — Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Frontend Developer building responsive, accessible web interfaces with React.js and Tailwind CSS."
+    />
+    <meta name="twitter:image" content="/og-image.svg" />
+
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- ---------------------------------------------------------------- -->
+    <!-- Fonts: preconnect + a single non-blocking request                 -->
+    <!-- ---------------------------------------------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+      />
+    </noscript>
+
+    <!-- ---------------------------------------------------------------- -->
+    <!-- Structured data (rich results for recruiters searching your name) -->
+    <!-- ---------------------------------------------------------------- -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Preeti Kumari",
+        "jobTitle": "Frontend Developer",
+        "url": "https://preeti28-lab.github.io/",
+        "email": "mailto:preerikumari2922005@gmail.com",
+        "knowsAbout": ["React.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Redux Toolkit"],
+        "sameAs": [
+          "https://github.com/preeti28-lab",
+          "https://linkedin.com/in/preeti-kumari-29983b334"
+        ]
+      }
+    </script>
+
+    <!-- ---------------------------------------------------------------- -->
+    <!-- Theme bootstrap: runs before paint so there is no light flash.    -->
+    <!-- Must stay in sync with src/context/ThemeContext.jsx              -->
+    <!-- ---------------------------------------------------------------- -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('portfolio-theme')
+          var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          var theme = stored || (prefersDark ? 'dark' : 'light')
+          document.documentElement.classList.toggle('dark', theme === 'dark')
+          document.documentElement.style.colorScheme = theme
+        } catch (e) {
+          /* localStorage blocked (private mode) — fall back to light */
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="font-family: sans-serif; padding: 2rem; text-align: center">
+        This portfolio needs JavaScript enabled. You can still reach me at
+        <a href="mailto:preerikumari2922005@gmail.com">preerikumari2922005@gmail.com</a>.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

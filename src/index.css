@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ==========================================================================
+   Design tokens
+   Every semantic colour is an "R G B" triplet so Tailwind can apply opacity
+   modifiers (e.g. `bg-surface/70`). Light values live on :root, dark values
+   override them under `.dark`.
+   ========================================================================== */
+@layer base {
+  :root {
+    --surface: 255 255 255; /* cards, navbar, panels           */
+    --surface-2: 245 247 251; /* page background                 */
+    --ink: 15 23 42; /* primary text                    */
+    --ink-muted: 88 100 122; /* secondary text                  */
+    --line: 226 232 240; /* borders & dividers              */
+    --glass: 255 255 255; /* glassmorphism base              */
+    --glass-opacity: 0.72;
+  }
+
+  .dark {
+    --surface: 17 24 39;
+    --surface-2: 9 12 24;
+    --ink: 237 241 247;
+    --ink-muted: 156 167 186;
+    --line: 39 48 66;
+    --glass: 17 24 39;
+    --glass-opacity: 0.6;
+  }
+
+  * {
+    @apply border-line;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5.5rem; /* keeps anchors clear of the sticky navbar */
+  }
+
+  body {
+    @apply bg-surface-2 font-sans text-ink antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-semibold tracking-tight;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Visible, on-brand focus ring for keyboard users only. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-surface-2;
+  }
+
+  /* Respect users who ask for less motion: kill all animation. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto !important;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Themed scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--surface-2));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--line));
+    border-radius: 9999px;
+    border: 2px solid rgb(var(--surface-2));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--ink-muted) / 0.5);
+  }
+
+  ::selection {
+    @apply bg-brand-500/25 text-ink;
+  }
+}
+
+/* ==========================================================================
+   Reusable component classes
+   ========================================================================== */
+@layer components {
+  /* Frosted panel used by the navbar, cards and floating badges. */
+  .glass {
+    background-color: rgb(var(--glass) / var(--glass-opacity));
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    backdrop-filter: blur(14px) saturate(180%);
+    @apply border border-line/80;
+  }
+
+  .card {
+    @apply relative rounded-2xl border border-line bg-surface shadow-soft transition-all duration-300 ease-smooth;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:border-brand-400/60 hover:shadow-lift;
+  }
+
+  /* Gradient text used for names / section keywords. */
+  .text-gradient {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+    background-size: 200% 200%;
+  }
+
+  /* Thin gradient border achieved with two backgrounds + mask-free trick. */
+  .gradient-border {
+    position: relative;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(120deg, #3366ff, #a855f7);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+  .gradient-border:hover::before {
+    opacity: 1;
+  }
+
+  /* Skip link — visible only when focused. */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-2 focus:font-medium focus:text-white;
+  }
+
+  /* Section vertical rhythm — one place to tune the whole page. */
+  .section {
+    @apply scroll-mt-24 py-20 sm:py-24 lg:py-28;
+  }
+}
+
+@layer utilities {
+  /* Fades the edges of marquees / horizontal scrollers. */
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
