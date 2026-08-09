@@ -32,7 +32,7 @@ export const projects = [
     tech: ['React', 'Redux Toolkit', 'Redux-Persist', 'React Router', 'Tailwind CSS'],
     image:
       'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=70',
-    live: '#', // TODO: add live demo URL
+    live: 'https://crm-panel-8a9y.vercel.app/login',
     github: '#', // TODO: add repository URL
   },
   {

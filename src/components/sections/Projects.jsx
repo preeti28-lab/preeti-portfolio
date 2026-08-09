@@ -18,6 +18,11 @@ import SectionHeading from '../ui/SectionHeading'
 // forwardRef is required: AnimatePresence `mode="popLayout"` measures the
 // exiting child, which means it needs a DOM ref on the card element.
 const ProjectCard = forwardRef(function ProjectCard({ project, index }, ref) {
+  // Projects without a real URL yet still carry the '#' placeholder — treat
+  // those as "no link" so we never render a button that goes nowhere.
+  const hasLive = Boolean(project.live) && project.live !== '#'
+  const hasRepo = Boolean(project.github) && project.github !== '#'
+
   return (
     <motion.article
       ref={ref}
@@ -46,26 +51,30 @@ const ProjectCard = forwardRef(function ProjectCard({ project, index }, ref) {
         {/* z-20 lifts these above the card-wide case-study link overlay below,
             otherwise the overlay would swallow their clicks. */}
         <div className="absolute inset-x-0 bottom-0 z-20 flex translate-y-3 items-center gap-2 p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-          <a
-            href={project.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-white/95 px-3 py-1.5 text-xs font-semibold text-slate-900 backdrop-blur transition-transform hover:scale-105"
-          >
-            <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
-            Live demo
-            <span className="sr-only"> of {project.title}</span>
-          </a>
-          <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900/85 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur transition-transform hover:scale-105"
-          >
-            <Github className="h-3.5 w-3.5" aria-hidden="true" />
-            Code
-            <span className="sr-only"> for {project.title}</span>
-          </a>
+          {hasLive && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-white/95 px-3 py-1.5 text-xs font-semibold text-slate-900 backdrop-blur transition-transform hover:scale-105"
+            >
+              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              Live demo
+              <span className="sr-only"> of {project.title}</span>
+            </a>
+          )}
+          {hasRepo && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-slate-900/85 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur transition-transform hover:scale-105"
+            >
+              <Github className="h-3.5 w-3.5" aria-hidden="true" />
+              Code
+              <span className="sr-only"> for {project.title}</span>
+            </a>
+          )}
         </div>
 
         {/* Corner badges */}
@@ -89,10 +98,24 @@ const ProjectCard = forwardRef(function ProjectCard({ project, index }, ref) {
         </p>
 
         <h3 className="mt-2 text-xl">
-          {/* Whole-card link target, kept accessible via a real anchor. */}
-          <Link to={`/projects/${project.slug}`} className="after:absolute after:inset-0">
-            {project.title}
-          </Link>
+          {/* Whole-card link target, kept accessible via a real anchor. Once a
+              project is deployed the card opens the live app; until then it
+              falls back to the case study. */}
+          {hasLive ? (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="after:absolute after:inset-0"
+            >
+              {project.title}
+              <span className="sr-only"> — open the live site</span>
+            </a>
+          ) : (
+            <Link to={`/projects/${project.slug}`} className="after:absolute after:inset-0">
+              {project.title}
+            </Link>
+          )}
         </h3>
 
         <p className="mt-2.5 flex-1 text-sm leading-relaxed text-ink-muted">{project.tagline}</p>
@@ -110,13 +133,19 @@ const ProjectCard = forwardRef(function ProjectCard({ project, index }, ref) {
           )}
         </ul>
 
-        <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-600 transition-colors dark:text-brand-300">
+        {/* z-20 + relative lifts this above the card-wide overlay so the case
+            study stays reachable even when the card itself opens the live app. */}
+        <Link
+          to={`/projects/${project.slug}`}
+          className="relative z-20 mt-5 inline-flex items-center gap-1 self-start text-sm font-medium text-brand-600 transition-colors hover:text-brand-500 dark:text-brand-300"
+        >
           Case study
+          <span className="sr-only"> for {project.title}</span>
           <ArrowUpRight
             className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             aria-hidden="true"
           />
-        </span>
+        </Link>
       </div>
     </motion.article>
   )

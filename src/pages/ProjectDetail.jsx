@@ -58,19 +58,25 @@ export default function ProjectDetail() {
           <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl">{project.title}</h1>
           <p className="mt-4 max-w-2xl text-lg text-ink-muted">{project.tagline}</p>
 
+          {/* '#' is the not-deployed-yet placeholder — skip the button entirely
+              rather than render one that goes nowhere. */}
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button href={project.live} size="lg" icon={ExternalLink}>
-              View live site
-            </Button>
-            <Button
-              href={project.github}
-              size="lg"
-              variant="secondary"
-              icon={Github}
-              iconPosition="left"
-            >
-              Source code
-            </Button>
+            {project.live && project.live !== '#' && (
+              <Button href={project.live} size="lg" icon={ExternalLink}>
+                View live site
+              </Button>
+            )}
+            {project.github && project.github !== '#' && (
+              <Button
+                href={project.github}
+                size="lg"
+                variant="secondary"
+                icon={Github}
+                iconPosition="left"
+              >
+                Source code
+              </Button>
+            )}
           </div>
         </Reveal>
 
