@@ -15,6 +15,27 @@ export const categories = ['All', 'React App', 'Business Website', 'Portfolio']
 
 export const projects = [
   {
+    slug: 'railoo',
+    title: 'Railoo',
+    category: 'React App',
+    featured: true,
+    year: '2026',
+    tagline: 'Train booking interface with a live fare engine and a carbon-saving calculator.',
+    description:
+      'A train ticket booking app where every number on screen is derived, not hardcoded. A single BookingProvider context holds the journey — stations, seat class, date and passenger count — and a dedicated journey engine turns that into distance, fare and eco impact on the fly, so the booking stepper, fare card and CO₂ panel always agree with each other.',
+    highlights: [
+      'Centralised booking state in a Context provider, with fare, distance and eco impact derived through useMemo.',
+      'Fare engine that layers class rate, haversine distance with a rail-curvature factor, weekend surcharge, GST and booking fees.',
+      'Eco impact panel comparing train emissions against car and flight, expressed as trees, kilometres and percentage saved.',
+      'Theme switching that respects system preference, syncs across tabs via storage events and crossfades with the View Transition API.',
+    ],
+    tech: ['React', 'React Router', 'Tailwind CSS', 'Framer Motion', 'Context API', 'Vite'],
+    image:
+      'https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=1200&q=70',
+    live: 'https://railoo-delta.vercel.app',
+    github: 'https://github.com/preeti28-lab/Railoo',
+  },
+  {
     slug: 'crm-application',
     title: 'CRM Application',
     category: 'React App',
@@ -36,7 +57,7 @@ export const projects = [
     // hit on a client-side route returns Vercel's 404. React Router redirects
     // to the login screen on its own once index.html loads.
     live: 'https://crm-panel-8a9y.vercel.app/',
-    github: 'https://github.com/preeti28-lab', // TODO: point at the individual repo
+    github: '#', // TODO: add repository URL
   },
   {
     slug: 'tech-shashtra-solutions',
@@ -57,7 +78,7 @@ export const projects = [
     image:
       'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=70',
     live: 'https://tech-shastra.vercel.app/',
-    github: 'https://github.com/preeti28-lab', // TODO: point at the individual repo
+    github: '#', // TODO: add repository URL
   },
   {
     slug: 'deepak-printer',
@@ -78,7 +99,7 @@ export const projects = [
     image:
       'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=70',
     live: '#', // TODO: add live demo URL
-    github: 'https://github.com/preeti28-lab', // TODO: point at the individual repo
+    github: '#', // TODO: add repository URL
   },
   {
     slug: 'personal-portfolio',
@@ -99,7 +120,7 @@ export const projects = [
     image:
       'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?auto=format&fit=crop&w=1200&q=70',
     live: 'https://preeti-portfolio-wheat.vercel.app/',
-    github: 'https://github.com/preeti28-lab', // TODO: point at the individual repo
+    github: '#', // TODO: add repository URL
   },
 ]
 
