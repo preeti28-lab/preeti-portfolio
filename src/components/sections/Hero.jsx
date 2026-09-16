@@ -7,7 +7,7 @@ import { techMarquee } from '../../data/skills'
 import { usePrefersReducedMotion } from '../../hooks/useMediaQuery'
 import { scrollToSection } from '../../utils/helpers'
 import Button from '../ui/Button'
-import profileIllustration from '../../assets/profile.svg'
+import profileIllustration from '../../assets/profile.png'
 
 const ICONS = { Github, Linkedin, Twitter, Mail }
 

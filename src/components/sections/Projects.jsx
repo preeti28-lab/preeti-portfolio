@@ -172,7 +172,7 @@ export default function Projects() {
         eyebrow="Projects"
         title="Selected"
         highlight="work"
-        subtitle="Six projects that show the range — full stack products, focused APIs and interface work. Every one has a live demo and public source."
+        subtitle="Seven projects that show the range — full stack products, focused APIs and interface work. Every one has a live demo and public source."
       />
 
       {/* ------------------------------------------------------- Filter tabs */}

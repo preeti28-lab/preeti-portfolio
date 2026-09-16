@@ -67,8 +67,8 @@ Search the repo for `TODO` — every open item is marked inline.
 2. **`src/data/experience.js`** — set the exact internship dates (currently just "Internship").
 3. **`index.html`, `public/robots.txt`, `public/sitemap.xml`, `.env.example`** — swap
    `https://preeti28-lab.github.io` for the real deployed domain once it is live.
-4. **`src/assets/profile.svg`** — swap for a real photo (`profile.jpg`/`.webp` works too; just
-   update the import in `Hero.jsx`).
+4. **`src/assets/profile.png`** — compress the portrait (1.2 MB is heavy for the Hero LCP image);
+   a ~1024px `.webp` would cut it by roughly 10x.
 
 Brand colours live in `tailwind.config.js` (`brand` and `accent` scales); light/dark surface tokens
 are the CSS variables at the top of `src/index.css`.
@@ -93,7 +93,7 @@ Portfolio/
 │   └── .env.example
 ├── src/
 │   ├── assets/
-│   │   └── profile.svg
+│   │   └── profile.png
 │   ├── components/
 │   │   ├── layout/             # Navbar, Footer, Loader, SEO, ThemeToggle…
 │   │   ├── sections/           # Hero, About, Skills, Projects, Contact…

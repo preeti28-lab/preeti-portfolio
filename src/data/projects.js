@@ -15,6 +15,59 @@ export const categories = ['All', 'React App', 'Business Website', 'Portfolio']
 
 export const projects = [
   {
+    slug: 'customer-support-dashboard',
+    title: 'Helpdesk',
+    category: 'React App',
+    featured: true,
+    year: '2026',
+    tagline:
+      'Support ticket dashboard with optimistic updates, a shareable slide-over detail route and full keyboard control.',
+    description:
+      'A dashboard a support team can work out of all day: filter, search and sort a ticket queue, then open any ticket in a slide-over panel without losing the list behind it. The panel is a real route, so every ticket has a shareable URL and the back button behaves. Ticket updates are optimistic — the UI moves immediately and rolls back with an error toast if the write fails — and the mock API persists changes to localStorage so they survive a reload.',
+    highlights: [
+      'Zustand stores for tickets, filters and request state, with stats, tab counts and the filtered list all derived through useMemo rather than stored.',
+      'One generic optimistic `updateTicket` action behind both status changes and assignment, with automatic rollback and an error toast on failure.',
+      'Slide-over ticket detail at /tickets/:ticketId — activity timeline, reply vs internal-note composer, previous/next navigation and copy link.',
+      'Keyboard shortcuts throughout (/ to search, J/K between tickets, Ctrl+Enter to send) plus ARIA listbox dropdowns rendered in a portal so they are never clipped.',
+      'Semantic theme tokens as CSS variables instead of per-component `dark:` classes, defaulting to the system setting with no flash on load.',
+    ],
+    tech: ['React', 'Zustand', 'React Router', 'Tailwind CSS', 'lucide-react', 'Vite'],
+    image:
+      'https://images.unsplash.com/photo-1553775282-20af80779df7?auto=format&fit=crop&w=1200&q=70',
+    live: 'https://customer-support-dashboard-seven.vercel.app',
+    github: 'https://github.com/preeti28-lab/customer-support-dashboard',
+  },
+  {
+    slug: 'qrsmart',
+    title: 'QRSmart',
+    category: 'React App',
+    featured: true,
+    year: '2026',
+    tagline: 'QR code platform with ~20 code types, a shared design studio and bulk Excel generation.',
+    description:
+      'A QR code generator platform that treats every code type as its own guided builder — vCard, WiFi, restaurant menu, coupon, event, product, playlist, PDF, video and more — while funnelling all of them through one shared Content → Design → Download flow. A separate bulk mode turns an uploaded Excel sheet into a whole batch of codes under a single design, and the dashboard side of the app covers saved codes, plans and scan statistics.',
+    highlights: [
+      'Around twenty QR builders — static (URL, WiFi, email, SMS, WhatsApp, vCard) and dynamic (menu, coupon, event, business, list of links) — sharing one builder shell and step flow.',
+      'Shared design studio with colour pickers, corner and dot styles, logo upload, CTA frames and selectable error-correction level, exporting a PNG built with qr-code-styling.',
+      'Bulk generator that reads an uploaded Excel sheet and applies one design across every row.',
+      'Redux Toolkit store over an axios API layer, with Auth0 / Google sign-in and an ApexCharts statistics dashboard.',
+    ],
+    tech: [
+      'React',
+      'Redux Toolkit',
+      'React Router',
+      'Tailwind CSS',
+      'Material UI',
+      'qr-code-styling',
+      'Auth0',
+      'Vite',
+    ],
+    image:
+      'https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=1200&q=70',
+    live: 'https://qr-smart-6ijn.vercel.app',
+    github: 'https://github.com/preeti28-lab/Qr-Smart',
+  },
+  {
     slug: 'railoo',
     title: 'Railoo',
     category: 'React App',
