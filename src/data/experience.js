@@ -7,22 +7,21 @@
 
 export const experiences = [
   {
-    id: 'koncept-frontend-intern',
-    role: 'Frontend Developer Intern',
-    company: 'Koncept Software Solutions',
-    type: 'internship',
-    // TODO: replace with the exact months, e.g. 'Jan 2025 — Jun 2025'.
-    duration: 'Internship',
+    id: 'averno-tech-mern',
+    role: 'MERN Stack Developer',
+    company: 'Averno Tech',
+    type: 'work',
+    duration: 'Jun 2025 — Present',
     location: 'Delhi, India',
     description:
-      'Built and maintained responsive, mobile-first web pages for client projects, working alongside the design team.',
+      'Building and maintaining responsive, production-ready web applications for client projects across edtech, admissions, healthcare and consulting.',
     achievements: [
-      'Built responsive, mobile-first pages with HTML5, CSS3 and modern JavaScript (ES6+), keeping performance consistent across devices and browsers.',
-      'Developed reusable, modular React.js UI components styled with Tailwind CSS to hold a consistent design system across multiple client projects.',
-      'Partnered with UI/UX designers to turn wireframes and mockups into pixel-perfect, production-ready interfaces.',
-      'Used Git and GitHub for version control and collaborative code reviews; optimised page performance and resolved cross-browser issues.',
+      'Built and maintained responsive, mobile-first web interfaces with HTML5, CSS3 and ES6+ JavaScript, ensuring consistent performance across devices and browsers.',
+      'Developed reusable, modular React.js components styled with Tailwind CSS, establishing a consistent design system across multiple client projects.',
+      'Partnered with UI/UX designers to translate wireframes and mockups into pixel-perfect, production-ready interfaces.',
+      'Used Git and GitHub for version control and code reviews; improved page performance and resolved cross-browser compatibility issues.',
     ],
-    tech: ['React', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'Tailwind CSS', 'Git'],
+    tech: ['React.js', 'Next.js', 'JavaScript (ES6+)', 'Tailwind CSS', 'Razorpay', 'Google OAuth', 'Git'],
   },
   {
     id: 'ba-delhi-university',
@@ -32,13 +31,12 @@ export const experiences = [
     duration: '2022 — 2026',
     location: 'Dwarka, Delhi, India',
     description:
-      'Pursuing a B.A. at the University of Delhi while building frontend skills through self-study and hands-on projects.',
+      'Pursuing a B.A. at the University of Delhi while working as a developer and building projects alongside the degree.',
     achievements: [
-      'Learned React.js, modern JavaScript and Tailwind CSS alongside the degree.',
-      'Shipped four self-directed frontend projects, from a Redux Toolkit CRM to multi-page business websites.',
-      'Completed an industry frontend internship during the course.',
+      'Learned React.js, Next.js, modern JavaScript and Tailwind CSS alongside the degree.',
+      'Shipped four live client websites and several self-directed React projects.',
     ],
-    tech: ['Self-taught Frontend', 'React.js', 'Tailwind CSS', 'Git & GitHub'],
+    tech: ['React.js', 'Next.js', 'Tailwind CSS', 'Git & GitHub'],
   },
   {
     id: 'cbse-schooling',
@@ -62,8 +60,9 @@ export const certifications = []
 
 /** Short "at a glance" facts rendered in the timeline sidebar. */
 export const quickFacts = [
+  { label: 'Current role', value: 'MERN Stack Developer — Averno Tech' },
   { label: 'Degree', value: 'B.A. — University of Delhi (2022 – 2026)' },
   { label: 'Based in', value: 'Dwarka, Delhi, India · open to remote' },
   { label: 'Languages', value: 'Hindi (Native) · English (Professional)' },
-  { label: 'Core stack', value: 'React.js · JavaScript (ES6+) · Tailwind CSS' },
+  { label: 'Core stack', value: 'React.js · Next.js · JavaScript (ES6+) · Tailwind CSS' },
 ]

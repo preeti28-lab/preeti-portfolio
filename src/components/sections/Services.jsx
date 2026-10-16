@@ -16,7 +16,7 @@ export default function Services() {
       <SectionHeading
         eyebrow="What I do"
         title="What I bring to"
-        highlight="a frontend team"
+        highlight="your team"
         subtitle="The work I am set up to take on from day one — and how I go about it."
       />
 
@@ -114,9 +114,9 @@ export default function Services() {
             aria-hidden="true"
           />
           <div className="relative">
-            <h3 className="text-2xl text-white sm:text-3xl">Hiring for a frontend role?</h3>
+            <h3 className="text-2xl text-white sm:text-3xl">Hiring a React / MERN developer?</h3>
             <p className="mx-auto mt-3 max-w-lg text-white/80">
-              I am open to frontend developer positions and happy to walk you through any of the
+              I am open to MERN stack and React developer positions and happy to walk you through any of the
               projects above. Send a message and I will get back to you quickly.
             </p>
             <Button

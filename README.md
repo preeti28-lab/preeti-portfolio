@@ -1,6 +1,6 @@
-# Preeti Kumari — Frontend Developer Portfolio
+# Preeti Kumari — MERN Stack Developer Portfolio
 
-Personal portfolio of **Preeti Kumari**, Frontend Developer (React.js), built with
+Personal portfolio of **Preeti Kumari**, MERN Stack Developer (React.js), built with
 **React + Vite + Tailwind CSS + Framer Motion**. Fully responsive, light/dark themed, accessible
 and SEO-optimised.
 
@@ -64,7 +64,6 @@ Search the repo for `TODO` — every open item is marked inline.
 
 1. **`src/data/projects.js`** — replace the `'#'` placeholders in `live` / `github` with real URLs,
    add real screenshots to `public/projects/`, and confirm each project `year`.
-2. **`src/data/experience.js`** — set the exact internship dates (currently just "Internship").
 3. **`index.html`, `public/robots.txt`, `public/sitemap.xml`, `.env.example`** — swap
    `https://preeti28-lab.github.io` for the real deployed domain once it is live.
 4. **`src/assets/profile.png`** — compress the portrait (1.2 MB is heavy for the Hero LCP image);

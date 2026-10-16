@@ -11,9 +11,73 @@
  *  3. Confirm the `year` on each project — these default to 2025.
  */
 
-export const categories = ['All', 'React App', 'Business Website', 'Portfolio']
+export const categories = ['All', 'Web Platform', 'React App', 'Business Website', 'Portfolio']
 
 export const projects = [
+  {
+    slug: 'codiva-academy',
+    title: 'Codiva Academy',
+    category: 'Web Platform',
+    featured: true,
+    year: '2026',
+    tagline: 'Online coding institute platform with Razorpay enrolment, Google sign-in and certificate verification.',
+    description:
+      'A full-featured edtech platform for live, mentor-led coding courses. Students browse Courses, Course Details, Certification, Blog and Contact pages backed by a REST API, enrol through Razorpay checkout, sign in with Google and track progress from their own dashboard — while admins manage everything from a dedicated panel.',
+    highlights: [
+      'Courses, Course Details, Certification, Blog and Contact pages connected to a REST API backend.',
+      'Razorpay checkout for course enrolment and Google OAuth sign-in.',
+      'Student dashboard, admin panel and certificate verification by certificate number.',
+      'City-wise landing pages, JSON-LD structured data and Open Graph / Twitter meta tags for SEO.',
+      'Content Security Policy for hardening and non-blocking font loading for faster first paint.',
+    ],
+    tech: ['React', 'Vite', 'Tailwind CSS', 'Razorpay', 'Google OAuth', 'REST API'],
+    image:
+      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=70',
+    live: 'https://codivaacademy.com',
+    github: '#', // TODO: add repository URL
+  },
+  {
+    slug: 'admissionhub',
+    title: 'AdmissionHub',
+    category: 'Web Platform',
+    featured: true,
+    year: '2026',
+    tagline: 'Admission guidance platform helping students compare and apply to UGC-approved universities.',
+    description:
+      'A multi-page Next.js platform — Home, About, Universities, Courses, Counseling, Blog and Contact — that helps students explore UGC-approved universities, compare courses side by side and reach a counsellor in a couple of clicks.',
+    highlights: [
+      'Multi-page Next.js site covering universities, courses, counseling, blog and contact.',
+      'Reusable university and course cards showing fees, placement, average salary and duration for quick comparison.',
+      'Lead-capture counseling forms with course-interest selection and WhatsApp / call CTAs.',
+      'A 4-step admission process, FAQs and testimonials to drive enquiries.',
+      'SEO and Open Graph metadata on every page.',
+    ],
+    tech: ['Next.js', 'React'],
+    image:
+      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=70',
+    live: 'https://admissionhubs-main.vercel.app',
+    github: '#', // TODO: add repository URL
+  },
+  {
+    slug: 'al-mustafa-medical-tourism',
+    title: 'Al Mustafa Medical Tourism',
+    category: 'Business Website',
+    featured: true,
+    year: '2026',
+    tagline: 'Patient-focused healthcare website connecting international patients with top hospitals in India.',
+    description:
+      'A responsive website for a medical tourism service that connects international patients with top hospitals and experienced doctors across India. The layout is clean and mobile-friendly, putting personalised care front and centre to build patient trust.',
+    highlights: [
+      'Responsive, patient-focused layout designed to build trust with international visitors.',
+      'Clear presentation of hospitals, doctors and personalised care services.',
+      'SEO meta descriptions and Open Graph metadata for search visibility and social sharing.',
+    ],
+    tech: ['React', 'Tailwind CSS'],
+    image:
+      'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=70',
+    live: 'https://al-mustafamedicaltourism-nu.vercel.app',
+    github: '#', // TODO: add repository URL
+  },
   {
     slug: 'customer-support-dashboard',
     title: 'Helpdesk',
@@ -118,14 +182,15 @@ export const projects = [
     category: 'Business Website',
     featured: true,
     year: '2025',
-    tagline: 'Multi-page site for an engineering consultancy, themed like a technical inspection report.',
+    tagline: 'Multi-page site for a quality management and engineering consultancy, themed like a technical inspection report.',
     description:
-      'A multi-page website for an engineering and business consulting firm. The visual language borrows from precision engineering — blueprint grid backgrounds and a dark navy palette — and the blog reads like an inspection report rather than a typical marketing page.',
+      'A multi-page website for a quality management, engineering and business consultancy firm. Every service page is driven by a single centralised services data source, the visual language borrows from precision engineering — blueprint grids and a dark navy palette — and the blog reads like an inspection report rather than a typical marketing page.',
     highlights: [
-      'Navbar with a dropdown blog menu and animated blog listing cards.',
-      'BlogDetails page styled as an engineering inspection report with a sticky table of contents.',
-      'Blueprint grid backgrounds and a dark navy palette for a precision-engineering feel.',
-      'IntersectionObserver-based scroll reveals paired with Framer Motion page transitions.',
+      'Service pages generated from one centralised services data source.',
+      'Multi-level navbar with hover dropdowns on desktop and an accordion on mobile.',
+      'Blog detail pages styled as engineering inspection reports with a sticky table of contents.',
+      'Dark-navy blueprint theme built on Tailwind design tokens, with IntersectionObserver and Framer Motion scroll animations.',
+      'Performance tuned through Lighthouse audits, WebP images, React.lazy and LCP preloading.',
     ],
     tech: ['React', 'Tailwind CSS', 'Framer Motion', 'React Router', 'IntersectionObserver'],
     image:

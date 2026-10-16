@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Portfolio of Preeti Kumari, Frontend Developer — built with React + Vite + Tailwind CSS.",
+  "description": "Portfolio of Preeti Kumari, MERN Stack Developer — built with React + Vite + Tailwind CSS.",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

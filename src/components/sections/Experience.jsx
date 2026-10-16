@@ -23,7 +23,7 @@ export default function Experience() {
         eyebrow="Experience"
         title="Where I have"
         highlight="worked & learned"
-        subtitle="An industry frontend internship, a degree in progress, and a lot of self-directed building in between."
+        subtitle="A full-time developer role shipping live client websites, a degree in progress, and a lot of self-directed building in between."
       />
 
       <div className="grid gap-10 lg:grid-cols-[1.6fr_1fr] lg:gap-14">

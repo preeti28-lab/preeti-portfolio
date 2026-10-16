@@ -18,8 +18,8 @@
   <g font-family="Poppins, Segoe UI, sans-serif">
     <text x="90" y="230" font-size="34" fill="#8eb6ff" font-weight="600">&lt;/&gt; Portfolio</text>
     <text x="90" y="330" font-size="84" font-weight="800" fill="#ffffff">Preeti Kumari</text>
-    <text x="90" y="410" font-size="46" font-weight="700" fill="url(#accent)">Frontend Developer</text>
-    <text x="90" y="470" font-size="26" fill="#9ca7ba">React.js · JavaScript · Tailwind CSS · Redux Toolkit</text>
+    <text x="90" y="410" font-size="46" font-weight="700" fill="url(#accent)">MERN Stack Developer</text>
+    <text x="90" y="470" font-size="26" fill="#9ca7ba">React.js · Next.js · JavaScript · Tailwind CSS</text>
   </g>
 
   <rect x="90" y="510" width="220" height="6" rx="3" fill="url(#accent)"/>
